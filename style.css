@@ -1,0 +1,197 @@
+/* Reset e Variáveis de Cores */
+:root {
+    --primaria: #661414;
+    --texto: #2d2d2d;
+    --text2: #fff;
+    --fundo-claro: #f8eef0;
+    --borda: #e0ddd5;
+    --hover: #f7c8d0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: var(--fundo-claro);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 8%;
+    background-color: var(--primaria);
+    backdrop-filter: blur(5px);
+    border-bottom: 1px solid var(--borda);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-img {
+    height: 55px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text2);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--hover);
+}
+
+/* Tipografia Sarifada */
+h1, h2, .label {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Seção Início (Hero) */
+#inicio {
+    padding: 100px 10%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.hero-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.hero-header h1 {
+    font-size: 3rem;
+    color: var(--primaria);
+    margin-bottom: 15px;
+}
+
+.linha-fina {
+    width: 50px;
+    border: 0;
+    border-top: 2px solid var(--primaria);
+    margin: 0 auto 20px;
+}
+
+.subtitulo {
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Perfil da Advogada */
+.perfil-horizontal {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    background: white;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.foto-container img {
+    width: 380px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+    filter: sepia(10%) contrast(105%); /* Toque profissional na foto */
+}
+
+.label {
+    color: var(--primaria);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.bio-texto h2 {
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+}
+
+.bio-texto p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Botão Premium */
+.btn-premium {
+    display: inline-block;
+    background-color: var(--primaria);
+    color: white;
+    padding: 18px 40px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 30px;
+    transition: all 0.3s ease;
+    border: 1px solid var(--primaria);
+}
+
+.btn-premium:hover {
+    background-color: transparent;
+    color: var(--primaria);
+    transform: translateY(-3px);
+}
+
+/* Mobile */
+@media (max-width: 968px) {
+    .perfil-horizontal {
+        flex-direction: column;
+        padding: 30px;
+    }
+    .foto-container img {
+        width: 100%;
+        height: auto;
+    }
+    .navbar {
+        padding: 1rem;
+    }
+    .nav-links {
+        display: none; /* Idealmente um menu hambúrguer aqui */
+    }
+}
+
+footer {
+    padding: 40px 10%;           /* Espaço interno generoso para não sufocar o texto */
+    background-color: #ffffff;    /* Fundo branco ou igual ao fundo do site */
+    border-top: 1px solid #e0ddd5; /* Linha fininha e clara para separar do conteúdo */
+    text-align: center;
+    margin-top: 60px;
+}
+
+footer p {
+    font-family: 'Lato', sans-serif;
+    color: #888;                  /* Cinza médio, para ser legível mas não chamar atenção */
+    font-size: 0.85rem;           /* Tamanho levemente reduzido */
+    letter-spacing: 1px;          /* Espaçamento entre letras para um ar mais moderno */
+    text-transform: uppercase;    /* Deixa os dados da OAB com um aspecto mais formal */
+}
+
