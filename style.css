@@ -30,12 +30,11 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.8rem 8%;
+    padding: 1rem 5%;
     background-color: var(--primaria);
     backdrop-filter: blur(5px);
     border-bottom: 1px solid var(--borda);
-    position: sticky;
-    top: 0;
+    position: relative;
     z-index: 1000;
 }
 
@@ -48,7 +47,7 @@ body {
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 40px;
+    gap: 2rem;
 }
 
 .nav-links a {
@@ -65,12 +64,70 @@ body {
     color: var(--hover);
 }
 
-/* Tipografia Sarifada */
+.menu-toggle {
+	display: none;
+	flex-direction: column;
+	cursor: pointer;
+	gap: 5px;
+}
+
+.menu-toggle .bar {
+	width: 25px;
+	height: 3px;
+	background-color: white;
+	transition: all 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+    /* Garante que nada saia lateralmente da tela */
+    body {
+        overflow-x: hidden;
+    }
+
+    .menu-toggle {
+        display: flex;
+        position: relative;
+        z-index: 1001; 
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--primaria);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: transform 0.4s ease-in-out, right 0.4s ease-in-out;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        font-size: 1.8rem;
+        display: block;
+        width: 100%;
+        padding: 15px 0;
+    }
+}
+
+
 h1, h2, .label {
     font-family: 'Playfair Display', serif;
 }
 
-/* Seção Início (Hero) */
 #inicio {
     padding: 100px 10%;
     max-width: 1300px;
@@ -101,7 +158,6 @@ h1, h2, .label {
     color: #666;
 }
 
-/* Perfil da Advogada */
 .perfil-horizontal {
     display: flex;
     align-items: center;
@@ -117,7 +173,7 @@ h1, h2, .label {
     height: 500px;
     object-fit: cover;
     border-radius: 10px;
-    filter: sepia(10%) contrast(105%); /* Toque profissional na foto */
+    filter: sepia(10%) contrast(105%); 
 }
 
 .label {
@@ -141,7 +197,6 @@ h1, h2, .label {
     color: #555;
 }
 
-/* Botão Premium */
 .btn-premium {
     display: inline-block;
     background-color: var(--primaria);
@@ -161,8 +216,7 @@ h1, h2, .label {
     transform: translateY(-3px);
 }
 
-/* Mobile */
-@media (max-width: 968px) {
+@media (max-width: 1200px) {
     .perfil-horizontal {
         flex-direction: column;
         padding: 30px;
@@ -171,27 +225,20 @@ h1, h2, .label {
         width: 100%;
         height: auto;
     }
-    .navbar {
-        padding: 1rem;
-    }
-    .nav-links {
-        display: none; /* Idealmente um menu hambúrguer aqui */
-    }
 }
 
 footer {
-    padding: 40px 10%;           /* Espaço interno generoso para não sufocar o texto */
-    background-color: #ffffff;    /* Fundo branco ou igual ao fundo do site */
-    border-top: 1px solid #e0ddd5; /* Linha fininha e clara para separar do conteúdo */
+    padding: 40px 10%;
+    background-color: #ffffff;/
     text-align: center;
     margin-top: 60px;
 }
 
 footer p {
     font-family: 'Lato', sans-serif;
-    color: #888;                  /* Cinza médio, para ser legível mas não chamar atenção */
-    font-size: 0.85rem;           /* Tamanho levemente reduzido */
-    letter-spacing: 1px;          /* Espaçamento entre letras para um ar mais moderno */
-    text-transform: uppercase;    /* Deixa os dados da OAB com um aspecto mais formal */
+    color: #888;                  
+    font-size: 0.85rem;          
+    letter-spacing: 1px;        
+    text-transform: uppercase; 
 }
 
